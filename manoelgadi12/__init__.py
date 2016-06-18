@@ -22,8 +22,8 @@ from sklearn import metrics, linear_model
 
 
 
-def ga(data):
-    
+def ga():
+    data = pd.read_csv("https://dl.dropboxusercontent.com/u/28535341/dev.csv")
     #df = pd.read_csv("dev.csv") #DEV-SAMPLE
     #dfo = pd.read_csv("oot0.csv")#OUT-OF-TIME SAMPLE
     #df = pd.read_csv("/home/ab/Documents/MBD/financial_analytics/variable_creation/data/data.csv")
@@ -259,7 +259,8 @@ def ga(data):
 # -*- coding: utf-8 -*-
 
 
-def sw(data):
+def sw():
+    data = pd.read_csv("https://dl.dropboxusercontent.com/u/28535341/dev.csv")
     from sklearn import linear_model,metrics
     import numpy as np
     import pandas as pd
@@ -371,7 +372,8 @@ def sw(data):
 
 
 def compare_stepwise_genetic():
-     
+    data = pd.read_csv("https://dl.dropboxusercontent.com/u/28535341/dev.csv")
+
     ga(data)
     sw(data)
 
@@ -403,10 +405,10 @@ def dummycreation ():
             list_if.add(var_name)
         elif re.search('^ob_',var_name):
             output_var = var_name
-    data_num = df.select_dtypes(include=[np.float])
-    data_int = df.select_dtypes(include=[np.int])
-    data_string = list(df.select_dtypes(include=[np.object]))
-    df.drop(select_dtypes(include=[np.object]), axis=1).as_matrix()
+    data_num = data.select_dtypes(include=[np.float])
+    data_int = data.select_dtypes(include=[np.int])
+    data_string = list(data.select_dtypes(include=[np.object]))
+    data.drop(select_dtypes(include=[np.object]), axis=1).as_matrix()
     data_string = pd.get_dummies(data[data_string])
     data_string = pd.DataFrame(data_string)
     data = pd.concat([data,data_string])
