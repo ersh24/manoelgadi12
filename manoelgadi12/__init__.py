@@ -7,7 +7,7 @@
 
 __author__ = 'ersh'
 __email__ = 'ershov@student.ie.edu'
-__version__ = '1.111'
+__version__ = '1.2'
 
 import compare_stepwise_genetic
 def hello ():
