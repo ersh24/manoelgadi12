@@ -14,9 +14,9 @@ import re
 from deap import creator, base, tools, algorithms 
 import random
 from sklearn import metrics, linear_model
-def ga(data):
+def ga():
     
-
+    data = pd.read_csv("https://dl.dropboxusercontent.com/u/28535341/dev.csv") 
     #df = pd.read_csv("dev.csv") #DEV-SAMPLE
     #dfo = pd.read_csv("oot0.csv")#OUT-OF-TIME SAMPLE
     #df = pd.read_csv("/home/ab/Documents/MBD/financial_analytics/variable_creation/data/data.csv")
@@ -257,12 +257,12 @@ Stepwise in Py
 @author: Gaille
 """
 
-def sw(data):
+def sw():
     from sklearn import linear_model,metrics
     import numpy as np
     import pandas as pd
     
-    
+    data = pd.read_csv("https://dl.dropboxusercontent.com/u/28535341/dev.csv") 
     def xattrSelect(x, idxset):
         """ Takes X matrix as list of list and returns subset containing columns in idxSet """
         xout = []
