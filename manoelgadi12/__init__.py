@@ -408,7 +408,6 @@ def dummycreation ():
     data_num = data.select_dtypes(include=[np.float])
     data_int = data.select_dtypes(include=[np.int])
     data_string = list(data.select_dtypes(include=[np.object]))
-    data.drop(select_dtypes(include=[np.object]), axis=1).as_matrix()
     data_string = pd.get_dummies(data[data_string])
     data_string = pd.DataFrame(data_string)
     data = pd.concat([data,data_string])
@@ -422,7 +421,7 @@ def bincreation ():
     for i in range(len(data.columns)-1,0,-1):
         if data.iloc[:,i].min()!=0 and data.iloc[:,i].max()!=1:
         
-            data[i] = pd.cut(df.iloc[:,i], bins, labels=group_names)
+            data[i] = pd.cut(data.iloc[:,i], bins, labels=group_names)
     return data
 
 
