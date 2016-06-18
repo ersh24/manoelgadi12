@@ -410,8 +410,7 @@ def dummycreation ():
     data_string = list(data.select_dtypes(include=[np.object]))
     data_string = pd.get_dummies(data[data_string])
     data_string = pd.DataFrame(data_string)
-    data = pd.concat([data,data_string])
-    return data
+    return data_string
     
     
 def bincreation ():
