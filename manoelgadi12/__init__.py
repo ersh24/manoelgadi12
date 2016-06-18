@@ -8,12 +8,19 @@
 __author__ = 'ersh'
 __email__ = 'ershov@student.ie.edu'
 __version__ = '1.2'
+
+
+
+#A
 import pandas as pd
 import numpy as np
 import re
 from deap import creator, base, tools, algorithms 
 import random
 from sklearn import metrics, linear_model
+
+data = pd.read_csv("https://dl.dropboxusercontent.com/u/28535341/dev.csv")
+
 def ga(data):
     
      #df = pd.read_csv("dev.csv") #DEV-SAMPLE
@@ -368,9 +375,31 @@ def sw(data):
 
 
 def compare_stepwise_genetic():
-    data = pd.read_csv("https://dl.dropboxusercontent.com/u/28535341/dev.csv") 
+     
     ga(data)
     sw(data)
+
+
+#V
+
+def dummycreation (data):
+    data_num = df.select_dtypes(include=[np.float])
+    data_int = df.select_dtypes(include=[np.int])
+    data_string = list(df.select_dtypes(include=[np.object]))
+    df.drop(select_dtypes(include=[np.object]), axis=1).as_matrix()
+    data_string = pd.get_dummies(data[data_string])
+    data_string = pd.DataFrame(data_string)
+    data = pd.concat([data,data_string])
+    return data
     
+    
+def bincreation (data):
+    bins = [-1.,   0.,   1., 2.,3.]
+    group_names = ['1', '2', '3', '4']
+    for i in range(len(data.columns)-1,0,-1):
+        if data.iloc[:,i].min()!=0 and data.iloc[:,i].max()!=1:
+        
+            data[i] = pd.cut(df.iloc[:,i], bins, labels=group_names)
+    return data
 
 
