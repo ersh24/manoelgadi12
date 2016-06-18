@@ -20,11 +20,11 @@ import random
 from sklearn import metrics, linear_model
 
 
-data = pd.read_csv("https://dl.dropboxusercontent.com/u/28535341/dev.csv")
+
 
 def ga(data):
     
-     #df = pd.read_csv("dev.csv") #DEV-SAMPLE
+    #df = pd.read_csv("dev.csv") #DEV-SAMPLE
     #dfo = pd.read_csv("oot0.csv")#OUT-OF-TIME SAMPLE
     #df = pd.read_csv("/home/ab/Documents/MBD/financial_analytics/variable_creation/data/data.csv")
     #len(df.columns)
@@ -257,12 +257,7 @@ def ga(data):
     return(cv_score)
 
 # -*- coding: utf-8 -*-
-"""
-Created on Sat Jun 18 19:21:34 2016
 
-Stepwise in Py
-@author: Gaille
-"""
 
 def sw(data):
     from sklearn import linear_model,metrics
@@ -383,7 +378,31 @@ def compare_stepwise_genetic():
 
 #V
 
-def dummycreation (data):
+def dummycreation ():
+    data = pd.read_csv("https://dl.dropboxusercontent.com/u/28535341/dev.csv")
+    in_model = []
+    list_ib = set()  #input binary
+    list_icn = set() #input categorical nominal
+    list_ico = set() #input categorical ordinal
+    list_if = set()  #input numerical continuos (input float)
+    list_inputs = set()
+    output_var = 'ob_target'
+    
+    for var_name in data.columns:
+        if re.search('^ib_',var_name):
+            list_inputs.add(var_name)      
+            list_ib.add(var_name)
+        elif re.search('^icn_',var_name):
+            list_inputs.add(var_name)      
+            list_icn.add(var_name)
+        elif re.search('^ico_',var_name):
+            list_inputs.add(var_name)      
+            list_ico.add(var_name)
+        elif re.search('^if_',var_name):
+            list_inputs.add(var_name)      
+            list_if.add(var_name)
+        elif re.search('^ob_',var_name):
+            output_var = var_name
     data_num = df.select_dtypes(include=[np.float])
     data_int = df.select_dtypes(include=[np.int])
     data_string = list(df.select_dtypes(include=[np.object]))
@@ -394,7 +413,8 @@ def dummycreation (data):
     return data
     
     
-def bincreation (data):
+def bincreation ():
+    data = pd.read_csv("https://dl.dropboxusercontent.com/u/28535341/dev.csv")
     bins = [-1.,   0.,   1., 2.,3.]
     group_names = ['1', '2', '3', '4']
     for i in range(len(data.columns)-1,0,-1):
