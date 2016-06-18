@@ -18,8 +18,8 @@ import re
 from deap import creator, base, tools, algorithms 
 import random
 from sklearn import metrics, linear_model
-
-data = pd.read_csv("https://dl.dropboxusercontent.com/u/28535341/dev.csv")
+def datadownload():
+    global data = pd.read_csv("https://dl.dropboxusercontent.com/u/28535341/dev.csv")
 
 def ga(data):
     
