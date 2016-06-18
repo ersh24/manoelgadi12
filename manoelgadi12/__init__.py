@@ -8,14 +8,14 @@
 __author__ = 'ersh'
 __email__ = 'ershov@student.ie.edu'
 __version__ = '1.2'
-
+import pandas as pd
+import numpy as np
+import re
+from deap import creator, base, tools, algorithms 
+import random
+from sklearn import metrics, linear_model
 def ga(data):
-    import pandas as pd
-    import numpy as np
-    import re
-    from deap import creator, base, tools, algorithms 
-    import random
-    from sklearn import metrics, linear_model
+    
 
     #df = pd.read_csv("dev.csv") #DEV-SAMPLE
     #dfo = pd.read_csv("oot0.csv")#OUT-OF-TIME SAMPLE
