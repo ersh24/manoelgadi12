@@ -8,6 +8,10 @@
 __author__ = 'ersh'
 __email__ = 'ershov@student.ie.edu'
 __version__ = '1.2'
+#There is a link to group github where you can find library manoelgadi12 and all the files
+#and instructions
+#https://github.com/ersh24/manoelgadi12
+
 ################
 #L Automated data cleaning
 ####################
@@ -858,8 +862,8 @@ def sw():
 def compare_stepwise_genetic():
     data = pd.read_csv("https://dl.dropboxusercontent.com/u/28535341/dev.csv")
 
-    ga(data)
-    sw(data)
+    ga()
+    sw()
 
 ####################
 #V dummi creation
