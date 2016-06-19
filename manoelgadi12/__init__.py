@@ -14,6 +14,9 @@ __version__ = '1.2'
 import pandas as pd
 import numpy as np
 import re
+####################
+#L Automated data cleaning
+####################
 def Faa1():
     import pandas as pd
     import numpy as np
@@ -101,7 +104,7 @@ def Faa1():
 ####################
 
 
-#     data = pd.read_csv("Example.csv")
+#     Human assisted data cleaning
    
 def total():
     
@@ -482,7 +485,7 @@ def total (data):
     root.mainloop()
     
 data = pd.read_csv("https://dl.dropboxusercontent.com/u/28535341/dev.csv") 
-total(data)
+
 
 
 ########################################
@@ -897,7 +900,9 @@ def dummycreation ():
     data_string = pd.DataFrame(data_string)
     return data_string
     
-    
+####################
+#V bins creation
+####################
 def bincreation ():
     import pandas as pd
     import numpy as np
