@@ -7,7 +7,7 @@
 
 __author__ = 'ersh'
 __email__ = 'ershov@student.ie.edu'
-__version__ = '1.46'
+__version__ = '1.1113'
 #There is a link to group github where you can find library manoelgadi12 and all the files
 #and instructions
 #https://github.com/ersh24/manoelgadi12
@@ -508,6 +508,7 @@ def ga():
     import pandas as pd
     import numpy as np
     import re
+    import deap
     from deap import creator, base, tools, algorithms 
     import random
     from sklearn import metrics, linear_model

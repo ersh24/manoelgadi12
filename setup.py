@@ -19,7 +19,7 @@ test_requirements = [
 
 setup(
     name='manoelgadi12',
-    version='1.1112',
+    version='1.1113',
     description="porject helps to automatically or with human assistance manipulate data",
     long_description=readme + '\n\n' + history,
     author="ersh",
