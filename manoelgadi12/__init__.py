@@ -434,6 +434,7 @@ def total (data):
     
     
     def onFrameConfigure(canvas):
+        import pandas as pd
         '''Reset the scroll region to encompass the inner frame'''
         canvas.configure(scrollregion=canvas.bbox("all"))
     
@@ -487,17 +488,18 @@ total(data)
 ########################################
 
 
-import pandas as pd
-import numpy as np
-import re
-from deap import creator, base, tools, algorithms 
-import random
-from sklearn import metrics, linear_model
+
 
 
 
 
 def ga():
+    import pandas as pd
+    import numpy as np
+    import re
+    from deap import creator, base, tools, algorithms 
+    import random
+    from sklearn import metrics, linear_model
     data = pd.read_csv("https://dl.dropboxusercontent.com/u/28535341/dev.csv")
     #df = pd.read_csv("dev.csv") #DEV-SAMPLE
     #dfo = pd.read_csv("oot0.csv")#OUT-OF-TIME SAMPLE
@@ -856,6 +858,12 @@ def compare_stepwise_genetic():
 #V dummi creation
 ####################
 def dummycreation ():
+    import pandas as pd
+    import numpy as np
+    import re
+    from deap import creator, base, tools, algorithms 
+    import random
+    from sklearn import metrics, linear_model
     data = pd.read_csv("https://dl.dropboxusercontent.com/u/28535341/dev.csv")
     in_model = []
     list_ib = set()  #input binary
@@ -889,6 +897,12 @@ def dummycreation ():
     
     
 def bincreation ():
+    import pandas as pd
+    import numpy as np
+    import re
+    from deap import creator, base, tools, algorithms 
+    import random
+    from sklearn import metrics, linear_model
     data = pd.read_csv("https://dl.dropboxusercontent.com/u/28535341/dev.csv")
     bins = [-1.,   0.,   1., 2.,3.]
     group_names = ['1', '2', '3', '4']
