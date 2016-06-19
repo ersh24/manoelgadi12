@@ -358,7 +358,7 @@ def HAdatacleaning():
 
 
 #     data = pd.read_csv("Example.csv")
-def HAfeatureselection (data):
+def HAfeatureselection ():
     import pandas as pd
     import numpy as np
     import tkinter as tk
@@ -895,12 +895,14 @@ def dummycreation ():
             list_if.add(var_name)
         elif re.search('^ob_',var_name):
             output_var = var_name
+
     data_num = data.select_dtypes(include=[np.float])
     data_int = data.select_dtypes(include=[np.int])
     data_string = list(data.select_dtypes(include=[np.object]))
     data_string = pd.get_dummies(data[data_string])
-    data_string = pd.DataFrame(data_string)
-    return data_string
+    datatemp= [data,data_string]
+    compData = pd.concat(datatemp, axis=1)
+    return compData
     
 ####################
 #V bins creation
