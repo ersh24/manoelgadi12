@@ -748,10 +748,11 @@ def ga():
 
 
 def sw():
-    data = pd.read_csv("https://dl.dropboxusercontent.com/u/28535341/dev.csv")
     from sklearn import linear_model,metrics
     import numpy as np
     import pandas as pd
+    data = pd.read_csv("https://dl.dropboxusercontent.com/u/28535341/dev.csv")
+
     
     
     def xattrSelect(x, idxset):
