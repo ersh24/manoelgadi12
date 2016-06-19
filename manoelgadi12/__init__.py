@@ -7,7 +7,7 @@
 
 __author__ = 'ersh'
 __email__ = 'ershov@student.ie.edu'
-__version__ = '1.2'
+__version__ = '1.46'
 #There is a link to group github where you can find library manoelgadi12 and all the files
 #and instructions
 #https://github.com/ersh24/manoelgadi12
