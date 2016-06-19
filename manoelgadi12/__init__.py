@@ -106,8 +106,10 @@ def Faa1():
 
 #     Human assisted data cleaning
    
-def total():
-    
+def HAdatacleaning():
+####################
+#L Human assisted data cleaning
+####################
     import pandas as pd
     import numpy as np
     import re
@@ -356,7 +358,7 @@ def total():
 
 
 #     data = pd.read_csv("Example.csv")
-def total (data):
+def HAfeatureselection (data):
     import pandas as pd
     import numpy as np
     import tkinter as tk
